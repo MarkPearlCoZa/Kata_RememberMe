@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build && find ./lib -iregex '.*.test.js' | xargs mocha -u tdd --reporter spec",
+    "build": "babel src -d lib"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,17 @@
   "bugs": {
     "url": "https://github.com/MarkPearlCoZa/Kata_RememberMe/issues"
   },
-  "homepage": "https://github.com/MarkPearlCoZa/Kata_RememberMe#readme"
+  "homepage": "https://github.com/MarkPearlCoZa/Kata_RememberMe#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "chao": "^1.0.3",
+    "mocha": "^3.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-es2015": "^6.22.0",
+    "chai": "^3.5.0"
+  }
 }
