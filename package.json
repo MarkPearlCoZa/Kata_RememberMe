@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run build && find ./lib -iregex '.*.test.js' | xargs mocha -u tdd --reporter spec",
+    "start": "npm run build && node ./lib/app.js",
     "build": "babel src -d lib"
   },
   "repository": {
